@@ -9,6 +9,13 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
+# ── Page config — must be the FIRST Streamlit call ────────────────────────────
+st.set_page_config(
+    page_title="SuperKart Sales Forecaster",
+    page_icon="🛒",
+    layout="wide",
+)
+
 # ── Load model ────────────────────────────────────────────────────────────────
 MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "models", "best_model.pkl")
 
@@ -28,13 +35,6 @@ PRODUCT_TYPES  = sorted(["Meat", "Snack Foods", "Hard Drinks", "Dairy", "Canned"
 STORE_SIZES    = ["High", "Medium", "Small"]
 CITY_TYPES     = ["Tier 1", "Tier 2", "Tier 3"]
 STORE_TYPES    = ["Supermarket Type1", "Supermarket Type2", "Departmental Store", "Food Mart"]
-
-# ── Page config ───────────────────────────────────────────────────────────────
-st.set_page_config(
-    page_title="SuperKart Sales Forecaster",
-    page_icon="🛒",
-    layout="wide",
-)
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
